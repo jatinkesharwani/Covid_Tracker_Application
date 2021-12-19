@@ -3,13 +3,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Data_Source/api_client.dart';
 import 'package:covid19_tracker/Data_Source/exceptions.dart';
-import '../../widgets/stats_widgets/affected_map_container.dart';
+import '../../widgets/stats_widgets/map_container.dart';
 import '../../widgets/stats_widgets/global_case_container.dart';
 import '../../widgets/stats_widgets/world_stats_image.dart';
-import '../../widgets/skeletons/top_country_list_skeleton.dart';
-import '../../widgets/skeletons/world_stat_skeleton.dart';
+import '../../widgets/Animations/top_country_list_decorations.dart';
+import '../../widgets/Animations/world_stat_decorations.dart';
 import '../../widgets/stats_widgets/top_country_list.dart';
-import '../../models/summary_each_country.dart';
+import '../../models/country_summary.dart';
 import 'package:flutter/material.dart';
 
 class GlobalStatScreen extends StatefulWidget {

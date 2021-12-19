@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Slot extends StatefulWidget {
+class VaccineSlot extends StatefulWidget {
   final List slots;
 
-  const Slot({Key key, this.slots}) : super(key: key);
+  const VaccineSlot({Key key, this.slots}) : super(key: key);
   @override
-  _SlotState createState() => _SlotState();
+  _VaccineSlotState createState() => _VaccineSlotState();
 }
 
-class _SlotState extends State<Slot> {
+class _VaccineSlotState extends State<VaccineSlot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

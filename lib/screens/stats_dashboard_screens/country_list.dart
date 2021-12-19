@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Data_Source/api_client.dart';
 import 'package:covid19_tracker/Data_Source/exceptions.dart';
 import '../../widgets/stats_widgets/countries_grid.dart';
-import '../../widgets/skeletons/country_list_skeleton.dart';
-import '../../models/summary_each_country.dart';
+import '../../widgets/Animations/country_list_decorations.dart';
+import '../../models/country_summary.dart';
 import 'package:flutter/material.dart';
 
 class CountriesScreen extends StatefulWidget {

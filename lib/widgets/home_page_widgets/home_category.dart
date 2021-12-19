@@ -5,8 +5,8 @@ import 'package:covid19_tracker/screens/myths_page.dart';
 import 'package:covid19_tracker/screens/precautions_page.dart';
 import 'package:covid19_tracker/screens/stats_dashboard_screens/world_stat.dart';
 import 'package:covid19_tracker/screens/symptoms_page.dart';
-import 'package:covid19_tracker/screens/updates_page.dart';
-import 'package:covid19_tracker/screens/vaccine_page.dart';
+import 'package:covid19_tracker/screens/news_updates_page.dart';
+import 'package:covid19_tracker/screens/vaccine_slots_page.dart';
 import 'package:covid19_tracker/screens/virus_details_page.dart';
 import 'package:flutter/material.dart';
 

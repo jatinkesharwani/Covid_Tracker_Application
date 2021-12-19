@@ -39,7 +39,7 @@ class _VaccineSlotsState extends State<VaccineSlots> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => Slot(
+              builder: (context) => VaccineSlot(
                 slots: slots,
               )));
     });

@@ -5,7 +5,7 @@ import 'package:covid19_tracker/Data_Source/api_client.dart';
 import 'package:covid19_tracker/Data_Source/exceptions.dart';
 import 'package:covid19_tracker/values/default_country_data.dart';
 import '../../widgets/stats_widgets/country_card_details.dart';
-import '../../widgets/skeletons/country_stat_skeleton.dart';
+import '../../widgets/Animations/country_stat_decorations.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

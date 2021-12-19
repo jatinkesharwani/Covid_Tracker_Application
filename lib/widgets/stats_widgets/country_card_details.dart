@@ -8,7 +8,7 @@ import '../../values/default_country_data.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'cases_progress_bars.dart';
-import 'new_case_boxes.dart';
+import 'new_case.dart';
 
 // ignore: must_be_immutable
 class CountryCardDetails extends StatefulWidget {

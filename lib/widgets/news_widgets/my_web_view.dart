@@ -21,7 +21,7 @@ class _MyWebViewState extends State<MyWebView> {
   String error="";
 
   final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
+  Completer<WebViewController>();
 
   @override
   Widget build(BuildContext context) {
@@ -51,19 +51,19 @@ class _MyWebViewState extends State<MyWebView> {
         children: <Widget>[
           !_loaded
               ? LinearProgressIndicator(
-                  value: null,
-                  backgroundColor: Colors.grey[200],
-                  valueColor: const AlwaysStoppedAnimation<Color>(Colors.black),
-                )
+            value: null,
+            backgroundColor: Colors.grey[200],
+            valueColor: const AlwaysStoppedAnimation<Color>(Colors.black),
+          )
               : Container(),
           error!=""
-          ? const Expanded(
-              child: Align(
+              ? const Expanded(
+            child: Align(
               alignment: Alignment.center,
               child: Text("HTTP 404 Error: Failed to load resource",style: TextStyle(color: Colors.grey,fontSize: 30),),
-              ),
+            ),
           )
-          :Flexible(
+              :Flexible(
             fit: FlexFit.loose,
             child: WebView(
               initialUrl: widget.selectedUrl,
@@ -81,10 +81,10 @@ class _MyWebViewState extends State<MyWebView> {
                   error=err.description;
                 });
               },
-              gestureRecognizers: <dynamic>{}
+              gestureRecognizers: Set()
                 ..add(
                   Factory<VerticalDragGestureRecognizer>(
-                      () => VerticalDragGestureRecognizer()),
+                          () => VerticalDragGestureRecognizer()),
                 ),
             ),
           ),

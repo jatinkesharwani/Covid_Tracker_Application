@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:covid19_tracker/screens/faqs_page.dart';
 import 'package:covid19_tracker/screens/home_page.dart';
-import 'package:covid19_tracker/screens/updates_page.dart';
-import 'package:covid19_tracker/screens/vaccine_page.dart';
+import 'package:covid19_tracker/screens/news_updates_page.dart';
+import 'package:covid19_tracker/screens/vaccine_slots_page.dart';
 import 'package:covid19_tracker/screens/virus_details_page.dart';
 
 enum NavigationEvents {
@@ -20,6 +20,7 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
 
   //NavigationStates get initialState => MyAccountsPage();
 
+  @override
   Stream<NavigationStates> mapEventToState(NavigationEvents event) async* {
     switch (event) {
       case NavigationEvents.homePageClickedEvent:

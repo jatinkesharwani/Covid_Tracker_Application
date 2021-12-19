@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import '../../widgets/stats_widgets/animated_bottom_bar.dart';
 import '../../models/bottom_bar_item.dart';
-import '../../screens/stats_dashboard_screens/default_country_screen.dart';
+import '../../screens/stats_dashboard_screens/default_country_page.dart';
 import '../../screens/stats_dashboard_screens/global_stat.dart';
 import '../../values/default_country_data.dart';
 import '../../screens/stats_dashboard_screens/country_list.dart';

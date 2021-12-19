@@ -8,7 +8,7 @@ import 'my_web_view.dart';
 class NewsTile extends StatelessWidget {
   final Map<String, dynamic> article;
 
-  const NewsTile({Key key, this.article}) : super(key: key);
+   const NewsTile({Key key, this.article}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
