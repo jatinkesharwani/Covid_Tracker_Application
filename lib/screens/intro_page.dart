@@ -1,4 +1,4 @@
-import 'package:covid19_tracker/screens/home_page.dart';
+import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatefulWidget {
@@ -90,7 +90,7 @@ class _IntroPageState extends State<IntroPage> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => const HomeScreen(),
+                    builder: (_) => const SideBarLayout(),
                   ),
                 );
               },

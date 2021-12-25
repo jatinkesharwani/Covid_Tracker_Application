@@ -1,11 +1,11 @@
-import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
+import 'package:covid19_tracker/screens/intro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: SideBarLayout(),
+    home: IntroPage(),
   ));
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
