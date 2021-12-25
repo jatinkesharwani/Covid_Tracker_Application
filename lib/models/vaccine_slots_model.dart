@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid19_tracker/screens/vaccine_slots_page.dart';
 import 'package:flutter/material.dart';
 
 class VaccineSlot extends StatefulWidget {
@@ -12,7 +14,30 @@ class _VaccineSlotState extends State<VaccineSlot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Available Slots'),
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const VaccineSlots(),
+                )),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+              size: 28,
+            )),
+        title: const AutoSizeText(
+          "Available Slots",
+          style: TextStyle(
+            fontSize: 20,
+            fontFamily: "Montserrat",
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
+          minFontSize: 14,
+          stepGranularity: 2,
+          maxLines: 1,
+        ),
+        centerTitle: true,
         backgroundColor: Colors.teal,
       ),
       body: Container(
