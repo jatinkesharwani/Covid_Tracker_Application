@@ -5,7 +5,6 @@ import 'package:covid19_tracker/Data_Source/api_client.dart';
 import 'package:covid19_tracker/Data_Source/exceptions.dart';
 import '../../widgets/stats_widgets/map_container.dart';
 import '../../widgets/stats_widgets/global_case_container.dart';
-import '../../widgets/stats_widgets/world_stats_image.dart';
 import '../../widgets/Animations/top_country_list_decorations.dart';
 import '../../widgets/Animations/world_stat_decorations.dart';
 import '../../widgets/stats_widgets/top_country_list.dart';
@@ -164,14 +163,14 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
 
                 const SizedBox(height: 10),
 
-                //Image Container
-                const WorldStatsImage(),
-
-                const SizedBox(
-                  height: 20,
+                //Affected Areas Map Container
+                const Padding(
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  child: AffectedAreasContainer(),
                 ),
 
-                //Global Cases Container
+                const SizedBox(height: 20,),
+
                 Padding(
                   padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                   child: GlobalCaseContainer(
@@ -179,17 +178,14 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20,),
 
-                //Affected Areas Map Container
                 const Padding(
                   padding: EdgeInsets.only(left: 15, right: 15),
-                  child: AffectedAreasContainer(),
+                  child: VaccineAreasStatsMap(),
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 20,),
 
                 //Top Countries List
                 SizedBox(

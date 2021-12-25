@@ -61,16 +61,6 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> with TickerProvid
                 onItemTap: widget.onItemTap,
                 thisItemIndex: 2,
               ),
-
-              AnimatedBarItem(
-                currBarItem: widget.currBarItem,
-                isSelected: widget.currBarItem == 3,
-                animationDuration: widget.animationDuration,
-                barItem: widget.barItems[3],
-                elevation: widget.elevation,
-                onItemTap: widget.onItemTap,
-                thisItemIndex: 3,
-              ),
             ],
           ),
         ),
