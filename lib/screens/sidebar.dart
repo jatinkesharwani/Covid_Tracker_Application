@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
+import 'package:covid19_tracker/widgets/sidebar/menu_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../sidebar/menu_item.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({Key key}) : super(key: key);
@@ -29,7 +29,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     isSidebarOpenedSink = isSidebarOpenedStreamController.sink;
   }
   _makingPhoneCall() async {
-    const url = 'tel:9876543210';
+    const url = 'tel:1123978046';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -124,7 +124,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       ),
                       MenuItem(
                         icon: Icons.phone,
-                        title: "Call Now",
+                        title: "Helpline No.",
                         onTap: (){
                           _makingPhoneCall();
                         },
