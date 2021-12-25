@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
+import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 class VirusDetailsScreen extends StatelessWidget with NavigationStates {
@@ -45,7 +46,10 @@ class VirusDetailsScreen extends StatelessWidget with NavigationStates {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const SideBarLayout(),
+              )),
           icon: Icon(
             Icons.arrow_back,
             color: color,

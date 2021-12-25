@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
 import 'package:covid19_tracker/models/vaccine_slots_model.dart';
+import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -48,7 +49,18 @@ class _VaccineSlotsState extends State<VaccineSlots> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Vaccination Slots')),
+      appBar: AppBar(
+          leading: IconButton(
+              onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const SideBarLayout(),
+                  )),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+                size: 28,
+              )),
+          title: const Text('Vaccination Slots')),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -65,7 +66,10 @@ class MythsScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const SideBarLayout(),
+                )),
             icon: Icon(
               Icons.arrow_back,
               color: color,

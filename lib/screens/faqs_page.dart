@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
 import 'package:covid19_tracker/widgets/FAQs_Data/faqs_data.dart';
+import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 class FAQPage extends StatelessWidget with NavigationStates {
@@ -10,6 +11,16 @@ class FAQPage extends StatelessWidget with NavigationStates {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => const SideBarLayout(),
+        )),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+              size: 28,
+            )),
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,

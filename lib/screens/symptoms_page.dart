@@ -2,6 +2,7 @@
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/widgets/home_page_widgets/symptom_card_grid.dart';
+import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 //ignore: must_be_immutable
@@ -23,7 +24,10 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const SideBarLayout(),
+                )),
             icon: Icon(
               Icons.arrow_back,
               color: widget.color,
