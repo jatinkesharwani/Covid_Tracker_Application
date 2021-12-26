@@ -1,8 +1,9 @@
 import 'dart:async';
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
 import 'package:covid19_tracker/Service/phone_auth.dart';
 import 'package:covid19_tracker/screens/Login_Screen/authenticate_screen.dart';
-import 'package:covid19_tracker/widgets/sidebar/menu_item.dart';
+import 'package:covid19_tracker/screens/SideBar/menu_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
@@ -38,6 +39,20 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     } else {
       throw 'Could not launch $url';
     }
+  }
+  void showAlertDialogOnOkCallback() {
+    AwesomeDialog(
+        context: context,
+        dialogType: DialogType.WARNING,
+        animType: AnimType.BOTTOMSLIDE,
+        title: 'Log out ?',
+        desc: 'Are you sure you want to log out ?',
+        btnCancelOnPress: () {},
+        btnOkOnPress: () {
+          Navigator.pushReplacement(context, MaterialPageRoute(
+              builder: (context) => const Authenticate()
+          ));
+        }).show();
   }
 
   @override
@@ -89,12 +104,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       MenuItem(
                         icon: Icons.logout,
                         title: "Log Out",
-                        onTap: () async {
-                          await authClass.signOut();
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(builder: (builder) => const Authenticate()),
-                                  (route) => false);
+                        onTap: () {
+                          showAlertDialogOnOkCallback();
                         }),
                       Divider(
                         height: 50,

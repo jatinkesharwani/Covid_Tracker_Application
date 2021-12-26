@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
+import 'package:covid19_tracker/screens/SideBar/sidebar_layout.dart';
 import 'package:covid19_tracker/widgets/FAQs_Data/faqs_data.dart';
-import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 class FAQPage extends StatelessWidget with NavigationStates {

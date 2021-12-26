@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:covid19_tracker/screens/myths_page.dart';
-import 'package:covid19_tracker/screens/precautions_page.dart';
-import 'package:covid19_tracker/screens/stats_dashboard_screens/world_stat.dart';
-import 'package:covid19_tracker/screens/symptoms_page.dart';
-import 'package:covid19_tracker/screens/news_updates_page.dart';
-import 'package:covid19_tracker/screens/vaccine_slots_page.dart';
-import 'package:covid19_tracker/screens/virus_details_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/myths_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/precautions_page.dart';
+import 'package:covid19_tracker/screens/Statistics_Screen/world_stat.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/symptoms_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/news_updates_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/vaccine_slots_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/virus_details_page.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

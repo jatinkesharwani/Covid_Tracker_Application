@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
-import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
+import 'package:covid19_tracker/screens/SideBar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 class VirusDetailsScreen extends StatelessWidget with NavigationStates {

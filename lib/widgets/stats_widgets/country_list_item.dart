@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 
-import '../../screens/stats_dashboard_screens/country_stat.dart';
+import '../../screens/Statistics_Screen/country_stat.dart';
 import '../../models/item_color_data.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';

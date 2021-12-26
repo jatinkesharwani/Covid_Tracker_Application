@@ -2,10 +2,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Data_Source/api_client.dart';
 import 'package:covid19_tracker/Data_Source/exceptions.dart';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
+import 'package:covid19_tracker/screens/SideBar/sidebar_layout.dart';
 import 'package:covid19_tracker/widgets/news_widgets/news_tile.dart';
 import 'package:covid19_tracker/widgets/news_widgets/news_updates_page_carousel.dart';
 import 'package:covid19_tracker/widgets/Animations/news_list_decorations.dart';
-import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 class UpdatesScreen extends StatefulWidget with NavigationStates {

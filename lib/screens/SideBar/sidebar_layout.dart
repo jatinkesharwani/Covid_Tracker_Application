@@ -1,6 +1,6 @@
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
-import 'package:covid19_tracker/screens/home_page.dart';
-import 'package:covid19_tracker/screens/sidebar.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/home_page.dart';
+import 'package:covid19_tracker/screens/SideBar/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

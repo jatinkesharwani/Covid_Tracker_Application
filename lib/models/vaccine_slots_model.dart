@@ -1,5 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:covid19_tracker/screens/vaccine_slots_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/vaccine_slots_page.dart';
 import 'package:flutter/material.dart';
 
 class VaccineSlot extends StatefulWidget {

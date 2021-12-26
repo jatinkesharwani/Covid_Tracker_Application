@@ -1,4 +1,3 @@
-import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatefulWidget {
@@ -67,8 +66,8 @@ class _IntroPageState extends State<IntroPage> {
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            const Text(
+          children: const <Widget>[
+            Text(
               "Coronavirus disease (COVID-19)",
               style: TextStyle(
                 fontSize: 24,
@@ -76,7 +75,7 @@ class _IntroPageState extends State<IntroPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Text(
+            Text(
               "is an infectianus disease caused by a new\nvirus.",
               style: TextStyle(
                 fontSize: 18,
@@ -85,44 +84,6 @@ class _IntroPageState extends State<IntroPage> {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 25),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const SideBarLayout(),
-                  ),
-                );
-              },
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(50),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      offset: Offset(1, 1),
-                      spreadRadius: 1,
-                      blurRadius: 3,
-                    )
-                  ],
-                ),
-                width: MediaQuery.of(context).size.width * .85,
-                height: 60,
-                child: const Center(
-                  child: Text(
-                    "GET STARTED",
-                    style: TextStyle(
-                      color: Color(0XFF8d12fe),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
-            )
           ],
         ),
       ),

@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:covid19_tracker/screens/faqs_page.dart';
-import 'package:covid19_tracker/screens/home_page.dart';
-import 'package:covid19_tracker/screens/news_updates_page.dart';
-import 'package:covid19_tracker/screens/vaccine_slots_page.dart';
-import 'package:covid19_tracker/screens/virus_details_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/faqs_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/home_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/news_updates_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/vaccine_slots_page.dart';
+import 'package:covid19_tracker/screens/Home_Screen_Pages/virus_details_page.dart';
 
 enum NavigationEvents {
   homePageClickedEvent,

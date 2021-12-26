@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid19_tracker/screens/SideBar/sidebar_layout.dart';
 import 'package:covid19_tracker/widgets/home_page_widgets/symptom_card_grid.dart';
-import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 
 //ignore: must_be_immutable

@@ -3,7 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
 import 'package:covid19_tracker/Bloc/vaccine_slots_bloc.dart';
 import 'package:covid19_tracker/models/vaccine_slots_model.dart';
-import 'package:covid19_tracker/widgets/sidebar/sidebar_layout.dart';
+import 'package:covid19_tracker/screens/SideBar/sidebar_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

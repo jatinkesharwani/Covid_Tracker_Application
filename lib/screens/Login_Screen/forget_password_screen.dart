@@ -1,4 +1,5 @@
-import 'package:covid19_tracker/screens/Login_Screen/SignInPage.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:covid19_tracker/screens/Login_Screen/authenticate_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -10,6 +11,20 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  void showAlertDialogOnOkCallback() {
+    AwesomeDialog(
+        context: context,
+        dialogType: DialogType.INFO,
+        animType: AnimType.BOTTOMSLIDE,
+        title: 'Request !',
+        desc: 'Check our email ',
+        //btnCancelOnPress: () {},
+        btnOkOnPress: () {
+          Navigator.pushReplacement(context, MaterialPageRoute(
+              builder: (context) => const Authenticate()
+          ));
+        }).show();
+  }
 
   String _email;
   bool isLoading = false;
@@ -24,7 +39,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         isLoading = true;
       });
       auth.sendPasswordResetEmail(email: _email);
-      showAlertDialog(context);
+      showAlertDialogOnOkCallback();
     }
   }
 
@@ -145,30 +160,4 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       ),
     );
   }
-}
-
-showAlertDialog(BuildContext context) {
-  Widget okButton = TextButton(
-    child: const Text("OK"),
-    onPressed: () {
-      Navigator.pushReplacement(context, MaterialPageRoute(
-          builder: (context) => const SignInPage()
-      ));
-    },
-  );
-
-  AlertDialog alert = AlertDialog(
-    title: const Text("Request !"),
-    content: const Text("please check your email"),
-    actions: [
-      okButton,
-    ],
-  );
-
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
 }
