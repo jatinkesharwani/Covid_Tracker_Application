@@ -1,15 +1,17 @@
 // ignore_for_file: file_names, unused_local_variable
 
 import 'package:covid19_tracker/Service/phone_auth.dart';
-import 'package:covid19_tracker/screens/Login_Screen/HomePage.dart';
 import 'package:covid19_tracker/screens/Login_Screen/PhonePage.dart';
 import 'package:covid19_tracker/screens/Login_Screen/SignInPage.dart';
+import 'package:covid19_tracker/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key key}) : super(key: key);
+  final Function toggle;
+  const SignUpPage({Key key,this.toggle}) : super(key: key);
+
 
   @override
   _SignUpPageState createState() => _SignUpPageState();
@@ -128,7 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
           });
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (builder) => const HomePage()),
+              MaterialPageRoute(builder: (builder) => const SplashPage()),
               (route) => false);
         } catch (e) {
           final snackbar = SnackBar(content: Text(e.toString()));

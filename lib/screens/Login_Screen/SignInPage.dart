@@ -1,14 +1,19 @@
 // ignore_for_file: file_names, unused_local_variable
 
 import 'package:covid19_tracker/Service/phone_auth.dart';
+import 'package:covid19_tracker/screens/Login_Screen/PhonePage.dart';
 import 'package:covid19_tracker/screens/Login_Screen/SignUpPage.dart';
+import 'package:covid19_tracker/screens/Login_Screen/forget_password_screen.dart';
+import 'package:covid19_tracker/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'HomePage.dart';
 
 class SignInPage extends StatefulWidget {
-  const SignInPage({Key key}) : super(key: key);
+  final Function toggle;
+  const SignInPage({Key key,this.toggle}) : super(key: key);
+
+  //SignInPage(this.toggle);
 
   @override
   _SignInPageState createState() => _SignInPageState();
@@ -49,7 +54,10 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(
                 height: 15,
               ),
-              buttonItem("assets/phone.svg", "Continue with Mobile", 30, () {}),
+              buttonItem("assets/phone.svg", "Continue with Mobile", 30, () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => const PhoneAuthPage()));
+              }),
               const SizedBox(
                 height: 18,
               ),
@@ -103,12 +111,20 @@ class _SignInPageState extends State<SignInPage> {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                "Forgot Password?",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ForgotPasswordPage()));
+                },
+                child: const Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ],
@@ -131,7 +147,7 @@ class _SignInPageState extends State<SignInPage> {
           });
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (builder) => const HomePage()),
+              MaterialPageRoute(builder: (builder) => const SplashPage()),
               (route) => false);
         } catch (e) {
           final snackbar = SnackBar(content: Text(e.toString()));

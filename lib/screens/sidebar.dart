@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:covid19_tracker/Bloc/navigation_bloc.dart';
+import 'package:covid19_tracker/Service/phone_auth.dart';
+import 'package:covid19_tracker/screens/Login_Screen/authenticate_screen.dart';
 import 'package:covid19_tracker/widgets/sidebar/menu_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +21,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
   Stream<bool> isSidebarOpenedStream;
   StreamSink<bool> isSidebarOpenedSink;
   final _animationDuration = const Duration(milliseconds: 500);
+  AuthClass authClass = AuthClass();
 
   @override
   void initState() {
@@ -81,7 +84,24 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   child: Column(
                     children: <Widget>[
                       const SizedBox(
-                        height: 100,
+                        height: 50,
+                      ),
+                      MenuItem(
+                        icon: Icons.logout,
+                        title: "Log Out",
+                        onTap: () async {
+                          await authClass.signOut();
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(builder: (builder) => const Authenticate()),
+                                  (route) => false);
+                        }),
+                      Divider(
+                        height: 50,
+                        thickness: 0.5,
+                        color: Colors.white.withOpacity(0.3),
+                        indent: 32,
+                        endIndent: 32,
                       ),
                       MenuItem(
                         icon: Icons.home,
@@ -90,13 +110,6 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.homePageClickedEvent);
                         },
-                      ),
-                      Divider(
-                        height: 64,
-                        thickness: 0.5,
-                        color: Colors.white.withOpacity(0.3),
-                        indent: 32,
-                        endIndent: 32,
                       ),
                       MenuItem(
                         icon: Icons.library_books_sharp,

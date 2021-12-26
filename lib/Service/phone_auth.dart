@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_function_declarations_over_variables
 
-import 'package:covid19_tracker/screens/Login_Screen/HomePage.dart';
+import 'package:covid19_tracker/screens/splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +32,7 @@ class AuthClass {
         storeTokenAndData(userCredential);
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (builder) => const HomePage()),
+            MaterialPageRoute(builder: (builder) => const SplashPage()),
                 (route) => false);
 
         final snackBar =
@@ -55,6 +55,9 @@ class AuthClass {
       final snackBar = SnackBar(content: Text(e.toString()));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
+  }
+  getCurrent() async {
+    return _auth.currentUser;
   }
 
   void storeTokenAndData(UserCredential userCredential) async {
@@ -113,7 +116,7 @@ class AuthClass {
       storeTokenAndData(userCredential);
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (builder) => const HomePage()),
+          MaterialPageRoute(builder: (builder) => const SplashPage()),
               (route) => false);
 
       showSnackBar(context, "logged In");

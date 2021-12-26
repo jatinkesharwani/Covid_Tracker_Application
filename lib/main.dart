@@ -1,31 +1,20 @@
-/*
-import 'package:covid19_tracker/screens/intro_page.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: IntroPage(),
-  ));
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
-}
-
- */
 import 'package:covid19_tracker/Service/phone_auth.dart';
-import 'package:covid19_tracker/screens/pages/HomePage.dart';
-import 'package:covid19_tracker/screens/pages/SignUpPage.dart';
+import 'package:covid19_tracker/screens/Login_Screen/SignUpPage.dart';
+import 'package:covid19_tracker/screens/Login_Screen/authenticate_screen.dart';
+import 'package:covid19_tracker/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
 }
 
 class MyApp extends StatefulWidget {
@@ -51,7 +40,12 @@ class _MyAppState extends State<MyApp> {
     //print("tokne");
     if (tokne != null) {
       setState(() {
-        currentPage = const HomePage();
+        currentPage = const SplashPage();
+      });
+    }
+    else{
+      setState(() {
+        currentPage = const Authenticate();
       });
     }
   }
@@ -59,7 +53,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: currentPage,
+      debugShowCheckedModeBanner: false,
+      home: FutureBuilder(future:authClass.getCurrent() ,builder: (context,AsyncSnapshot<dynamic> snapshot){if(snapshot.hasData){return const SplashPage();}
+      else{return const Authenticate();}}),
+     // home: const Authenticate(),
     );
   }
 }
