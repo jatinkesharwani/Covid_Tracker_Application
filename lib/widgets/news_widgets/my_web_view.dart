@@ -81,7 +81,7 @@ class _MyWebViewState extends State<MyWebView> {
                   error=err.description;
                 });
               },
-              gestureRecognizers: Set()
+              gestureRecognizers: <dynamic>{}
                 ..add(
                   Factory<VerticalDragGestureRecognizer>(
                           () => VerticalDragGestureRecognizer()),
