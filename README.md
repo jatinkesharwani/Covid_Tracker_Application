@@ -127,4 +127,4 @@ To contribute, fork the repository and push the changes to the **master** branch
 
 ## 💬 Feedback
 
-Feel free to send us feedback on gmail => flutter --"jatinkesharwani360@gmail.com"  or [file an issue](https://github.com/jatinkesharwani/Covid_Tracker_Application/issues). Feature requests are always welcome.
+Feel free to send us feedback on gmail => "jatinkesharwani360@gmail.com"  or [file an issue](https://github.com/jatinkesharwani/Covid_Tracker_Application/issues). Feature requests are always welcome.
